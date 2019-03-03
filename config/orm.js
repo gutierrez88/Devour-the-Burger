@@ -10,7 +10,7 @@ var orm = {
     },
     insertOne: function(table, colOne, colTwo, valOne, valTwo, cb){
         var queryString = "INSERT INTO ?? ( ??, ??) VALUES (?, ?)";
-        connection.query(queryString,[table, colONe, colTwo, valOne, valTwo], function(err, result){
+        connection.query(queryString,[table, colOne, colTwo, valOne, valTwo], function(err, result){
             if (err) throw err;
             cb(result);
         });
