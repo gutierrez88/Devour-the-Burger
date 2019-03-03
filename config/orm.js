@@ -1,5 +1,7 @@
-// Create a `connection.js` file inside `config` directory.
+var mysql = require("mysql");
 
-// * Inside the `connection.js` file, setup the code to connect Node to MySQL.
+var orm = {
 
-// * Export the connection.
+};
+
+module.exports = orm;

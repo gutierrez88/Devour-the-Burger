@@ -1,4 +1,5 @@
-// Inside the `burgers_controller.js` file, import the following:
+var express = require("express");
+var router = express.Router();
+var burger = require("../models/burger.js");
 
-//    * Express
-//    * `burger.js`
+module.exports = router;
