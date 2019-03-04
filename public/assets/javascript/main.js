@@ -1,45 +1,33 @@
 $(function() {
-    $(".devoured").on("click", function(event) {
-      var id = $(this).data("id");
-    
-      // Send the PUT request.
-      $.ajax("/api/burgers/" + id, {
-        type: "PUT"
-      }).then(
-        function() {
-          console.log(id+ "has been devoured");
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
-  
-    $(".create-form").on("submit", function(event) {
-      // Make sure to preventDefault on a submit event.
-      event.preventDefault();
-  
-      var burgerName = {burgerName: $("#newName").val().trim()};
-      console.log(burgerName)
-      // Send the POST request.
-      $.ajax("/api/burgers", {
-        type: "POST",
-        data: burgerName
-      }).then(
-        function() {
-          console.log("created new burger");
-          // Reload the page to get the updated list
-          location.reload();
 
-        }
-      );
+  $(".devoured").on("click", function(event) {
+    var id = $(this).data("id");
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT"
+    }).then(function() {
+      console.log(id+ "has been devoured");
+      location.reload();
     });
+  });
+  
+  $(".create-form").on("submit", function(event) {
+    event.preventDefault();
+    var burgerName = {burgerName: $("#newName").val().trim()};
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: burgerName
+    }).then(function() {
+      console.log("created new burger");
+      location.reload();
+    });
+  });
+
 });
 
 $('a[href*="#"]').on('click', function (e) {
 	e.preventDefault();
-
 	$('html, body').animate({
 		scrollTop: $($(this).attr('href')).offset().top
-	}, 500, 'linear');
+	}, 600, 'linear');
 });
 

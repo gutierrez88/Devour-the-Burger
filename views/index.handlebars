@@ -1,6 +1,6 @@
 <div class="parallax">
   <div id="intro" align="center">
-    <p>Life's Treasures Need to be Enjoy!</p>
+    <p>Life's Treasures Need to be Enjoyed!</p>
   </div>
 
   <a id="down" href="#content"></a>
@@ -8,14 +8,15 @@
 </div>
 
 <div class="container" id="content">
-
+  <p id="title">Time to Eat!</p>
   <div class="row" id="firstRow">
 
-    <div class="col s4 offset-s2" id="available">
-      <ul id="available" class="row">
+    <div class="col s5 offset-s1" id="available">
+      <h6 id="buDev" align="center">Don't they look so good?</h6>
+      <ul class="row">
         {{#each burgers}}
           {{#unless devoured}}
-            <li class="col s7" id="addedBur">{{burgerName}}</li>
+            <li class="col s7" id="addedBur"><span>» </span>{{burgerName}}</li>
 
             <button class="devoured col s4 offset-s1" data-id="{{id}}">Devour It!</button>
           {{/unless}}
@@ -23,13 +24,13 @@
       </ul>
     </div>
 
-    <div class="col s4" id="taken">
-      <p id="buDev">Burgers that are devoured!</p>
+    <div class="col s5" id="taken">
+      <h6 id="buDev" align="center">Burgers that have already been devoured!</h6>
 
-      <ul id="taken">
+      <ul>
         {{#each burgers}}
         {{#if devoured}}
-        <li>{{burgerName}}</li>
+        <li><span>ᗧ </span><span id="textdec">{{burgerName}}</span></li>
         {{/if}}
         {{/each}}
       </ul>
@@ -41,23 +42,15 @@
     <p>Add a Burger</p>
     <form class="create-form">
 
-      <div class="form-group">
-        <label for="bN">Burger Name:</label>
+      <div class="form-group" id="newInput">
+        <label for="bN" id="addlabel">New Burger Name:</label>
         <input type="text" id="newName" name="name">
       </div>
 
-      <button type="submit">Add burger</button>
+      <button type="submit" id="addBtn">Add burger</button>
     </form>
   </div>
 
 </div>
 
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Modal Header</h4>
-    <p>A bunch of text</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
-</div>
+
