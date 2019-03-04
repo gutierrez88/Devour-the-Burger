@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.parallax {
+    background-image: url("../images/parallaxImg2.jpeg");
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+}
+
+#content {
+    height: 100%;
+}
+
+#intro {
+    font-size: 64px;
+    color: white;
+    align: center;
+    padding-top: 30px;
+}
+
+#down {
+    background-image: url("../images/down2.svg");
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+    position:absolute;
+    bottom: 50px;
+    margin-left: -35px;
+}
+
+#down:hover {
+    height: 100px;
+    width: 100px;
+    margin-left: -50px;
+    bottom: 35px;
+}
+
+#firstRow {
+    padding-top: 50px;
+}
+
+#available {
+
+}
+
+#taken {
+
+}
+
+.devoured {
+    
+}
+
+#addedBur {
+
+}
+
+#burgerGif {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#burgerGif > img {
+    height: 250px;
+    width: 400px;
+}

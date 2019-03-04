@@ -29,8 +29,17 @@ $(function() {
           console.log("created new burger");
           // Reload the page to get the updated list
           location.reload();
+
         }
       );
     });
 });
-  
+
+$('a[href*="#"]').on('click', function (e) {
+	e.preventDefault();
+
+	$('html, body').animate({
+		scrollTop: $($(this).attr('href')).offset().top
+	}, 500, 'linear');
+});
+

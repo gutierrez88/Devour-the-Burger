@@ -1,30 +1,63 @@
-<h2>Eat Some Burgers!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that are devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      <li>{{burgerName}}</li>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="bN">Burger Name:</label>
-    <input type="text" id="newName" name="name">
+<div class="parallax">
+  <div id="intro" align="center">
+    <p>Life's Treasures Need to be Enjoy!</p>
   </div>
 
-  <button type="submit">Add burger</button>
-</form>
+  <a id="down" href="#content"></a>
+
+</div>
+
+<div class="container" id="content">
+
+  <div class="row" id="firstRow">
+
+    <div class="col s4 offset-s2" id="available">
+      <ul id="available" class="row">
+        {{#each burgers}}
+          {{#unless devoured}}
+            <li class="col s7" id="addedBur">{{burgerName}}</li>
+
+            <button class="devoured col s4 offset-s1" data-id="{{id}}">Devour It!</button>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col s4" id="taken">
+      <p id="buDev">Burgers that are devoured!</p>
+
+      <ul id="taken">
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>{{burgerName}}</li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
+
+  <div id="addBurger">
+    <p>Add a Burger</p>
+    <form class="create-form">
+
+      <div class="form-group">
+        <label for="bN">Burger Name:</label>
+        <input type="text" id="newName" name="name">
+      </div>
+
+      <button type="submit">Add burger</button>
+    </form>
+  </div>
+
+</div>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
